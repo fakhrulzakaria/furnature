@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dining Room</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="assets/OwlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/OwlCarousel/owl.theme.default.min.css">
+    <link rel="icon" href="assets/img/logo.png">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            background: #f7f7f7;
+            overflow-x: hidden;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            display: inline-block;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        .a-i-c {
+            display: flex;
+            align-items: center;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #E1E1E1;
+        }
+
+        header .baris {
+            align-items: center
+        }
+
+        header .baris.header-top {
+            padding: 20px 0;
+        }
+
+        .search-box {
+            border: 1px solid #c4c4c4;
+            overflow-x: hidden;
+            display: flex;
+            border-radius: 6px;
+            margin: 0 !important;
+            position: relative;
+        }
+
+        .search-result-box {
+            padding: 20px;
+            width: 445px;
+            outline: none;
+            color: #C4C4C4;
+            background: #FFFFFF;
+            border: 1px solid #C4C4C4;
+            border-radius: 8px;
+            position: absolute;
+            z-index: 1;
+            display: none;
+        }
+
+        .search-result-box h1 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: normal;
+            color: #7B7B7B;
+        }
+
+        .search-result-box a {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: normal;
+            color: #7B7B7B;
+        }
+
+        .search-result-box a {
+            color: #7B7B7B
+        }
+
+        .search-box input[type=text] {
+            border: none;
+            padding: 8px 20px;
+            width: 451px;
+            height: 40px;
+            display: inline-block;
+            outline: none;
+            color: #C4C4C4;
+        }
+
+        .search-box input[type=text]::placeholder {
+            color: #C4C4C4
+        }
+
+        .search-box .search-img {
+            padding: 8px 20px;
+            width: 64px;
+            height: 40px;
+            display: inline-block
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center
+        }
+
+        .navbar-right>* {
+            display: inline-block;
+        }
+
+        .navbar-right .vertical-line {
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        .btn-blue {
+            margin-right: 10px;
+        }
+
+        .navbar-left ul {
+            overflow: hidden;
+        }
+
+        .navbar-left ul::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .navbar-left li {
+            float: left;
+            margin-right: 40px;
+            padding: 15px 0;
+        }
+
+        .navbar-left li.dropdown>a::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-bottom: 0px solid transparent;
+            border-top: 5px solid #C4C4C4;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        .navbar-left a {
+            color: #474748;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            z-index: 1;
+            padding: 10px;
+            top: 55px;
+            border-radius: 8px;
+            border: 1px solid #E1E1E1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        main {
+            padding: 100px 0;
+        }
+
+        main b {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 44px;
+            letter-spacing: 0.02em;
+            color: #52525C;
+        }
+
+        main p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.02em;
+            color: #8A8A8A;
+        }
+
+        .inspiration {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .inspiration img {
+            width: 100%;
+        }
+
+        main .popular-item div {
+            background: #fff;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        section.subscribe {
+            padding: 100px 0;
+            background: #DFECF7
+        }
+
+        h1.subscribe {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: normal;
+            color: #33333F;
+        }
+
+        p.subscribe {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #7B7B7B;
+        }
+
+        .email-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        section.subscribe input[type=text] {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 30px rgba(177, 177, 177, 0.15);
+            border-radius: 20px;
+            border: none;
+            padding: 12px 20px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.02em;
+            color: #7B7B7B;
+            width: 360px;
+            margin-right: 20px;
+        }
+
+        section.subscribe input[type=text]::placeholder {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.02em;
+            color: #7B7B7B;
+        }
+
+        section.subscribe input[type=button] {
+            padding: 12px 30px;
+            background: #FF8080;
+            box-shadow: 0px 4px 30px rgba(177, 177, 177, 0.15);
+            border-radius: 20px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            border: none
+        }
+
+        footer {
+            padding: 100px 0;
+            border-bottom: 1px solid #ECECEC;
+        }
+
+        footer .grid-4:last-child .list {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .list {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .list ul:first-child {
+            margin-right: 100px;
+        }
+
+        .list ul li.list-title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: normal;
+            color: #3E3F43;
+            margin-bottom: 20px;
+        }
+
+        .list ul li {
+            margin-bottom: 10px;
+        }
+
+        .list ul li a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 42px;
+            color: #65666A;
+        }
+
+        th,
+        td {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: normal;
+            color: #65666A;
+            padding: 15px 0;
+        }
+
+        th {
+            vertical-align: top;
+        }
+
+        footer li p {
+            margin-left: 15px;
+        }
+
+        section.copyright {
+            padding: 30px 0;
+        }
+
+        p.copyright {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: normal;
+            color: #A3A3A4;
+        }
+
+        .social-icon {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .social-icon>* {
+            margin-right: 17px;
+        }
+
+        main .grid-4 div {
+            padding: 15px 0;
+        }
+
+        main .grid-4 img {
+            width: 100%;
+        }
+
+        .section-head-underline {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+        }
+
+        .grid-9 {
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .menu {
+            display: none;
+        }
+
+        section#navbar2 {
+            background: #fff;
+            display: none;
+        }
+
+        section#navbar2 li {
+            display: block;
+        }
+
+        li#t-search {
+            padding: 15px;
+        }
+
+        li#t-search input {
+            padding: 10px 0;
+            padding-left: 25px;
+            border: 1px solid #E1E1E1;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        section#navbar2 li a {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1;
+            border-top: 1px solid #E1E1E1;
+            display: block;
+            height: auto;
+            color: #474748;
+        }
+
+        /*Responsive*/
+        @media screen and (max-width: 991px) {
+
+            header:nth-child(even) {
+                display: none;
+            }
+
+            header .baris.header-top {
+                padding: 10px 0;
+            }
+
+            .header-top .grid-5,
+            .header-top .grid-4 {
+                display: none;
+            }
+
+            section.promo-slider {
+                padding: 0;
+            }
+
+            .popular-product .grid-3 {
+                padding: 15px;
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .decor {
+                display: block;
+            }
+
+            .ill {
+                text-align: center;
+            }
+
+            .ill-right .ill::after {
+                content: unset;
+                clear: unset;
+                display: unset;
+            }
+
+            .ill-right img {
+                float: unset;
+            }
+
+            section.subscribe .grid-6 {
+                text-align: center;
+                -webkit-box-flex: unset;
+                -ms-flex: unset;
+                flex: unset;
+                max-width: unset;
+            }
+
+            .email-group {
+                justify-content: center;
+            }
+
+            p.subscribe {
+                margin-bottom: 30px;
+            }
+
+            .list ul:first-child {
+                margin-right: 30px;
+            }
+
+            .menu {
+                display: block
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+            .category .grid-3 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 15px;
+            }
+
+            .category .grid-3 img {
+                width: 100%;
+            }
+
+            section.copyright {
+                text-align: center;
+            }
+
+            p.copyright {
+                margin-bottom: 30px;
+            }
+
+            .social-icon {
+                justify-content: center;
+            }
+
+            footer .grid-4:last-child .list {
+                justify-content: flex-start;
+            }
+
+            .list ul:first-child {
+                margin-right: 100px;
+            }
+
+            .section-head-underline {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            main {
+                padding: 50px 0;
+            }
+
+            header .grid-3 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            header .grid-9 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            .section-title {
+                font-size: 24px !important;
+            }
+
+            main {
+                padding: 50px 0;
+            }
+
+            .item-name,
+            .item-price {
+                font-size: 16px !important;
+            }
+
+            h1.subscribe {
+                font-size: 24px !important
+            }
+
+            p.subscribe {
+                font-size: 16px !important
+            }
+
+            section.subscribe input[type=text] {
+                font-size: 14px !important
+            }
+
+            section.subscribe input[type=text]::placeholder {
+                font-size: 14px !important
+            }
+
+            section.subscribe input[type=button] {
+                font-size: 14px !important
+            }
+
+            .owl-theme .owl-nav.disabled+.owl-dots {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .owl-theme .owl-dots .owl-dot span {
+                width: 10px;
+                height: 10px;
+                margin: 0px 5px;
+            }
+
+            .decor-title {
+                font-size: 24px !important;
+                line-height: unset;
+            }
+
+            .decor-desc {
+                font-size: 16px !important;
+            }
+
+            .btn-outline-red {
+                font-size: 14px !important;
+                padding: 12px 35px 12px 35px;
+            }
+
+            header .grid-3 img {
+                height: 20px;
+            }
+
+            section.popular-product,
+            section.room-decor,
+            section.category,
+            section.inspirations {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            section.popular-product,
+            section.room-decor,
+            section.category {
+                padding-bottom: unset;
+            }
+
+            .section-head-underline {
+                margin-bottom: 50px;
+            }
+
+            section.popular-product {
+                border-bottom: none;
+            }
+        }
+
+        /*Akhir Responsive*/
+
+        /*Grid*/
+        .wadah {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .wadah {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .wadah {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .wadah {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .wadah {
+                max-width: 1140px;
+            }
+        }
+
+        .baris {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .grid-1,
+        .grid-2,
+        .grid-3,
+        .grid-4,
+        .grid-5,
+        .grid-6,
+        .grid-7,
+        .grid-8,
+        .grid-9,
+        .grid-10,
+        .grid-11,
+        .grid-12,
+        .grid {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .grid {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%;
+        }
+
+        .invisible-grid {
+            visibility: hidden;
+        }
+
+        .no-margin {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+
+        .showup {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                -ms-flex-preferred-size: 0;
+                flex-basis: 0;
+                -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                max-width: 100%;
+            }
+
+            .grid-auto {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                width: auto;
+                max-width: no-marginnone;
+            }
+
+            .grid-1 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 8.333333%;
+                flex: 0 0 8.333333%;
+                max-width: 8.333333%;
+            }
+
+            .grid-2 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 16.666667%;
+                flex: 0 0 16.666667%;
+                max-width: 16.666667%;
+            }
+
+            .grid-3 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            .grid-4 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            .grid-5 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+
+            .grid-6 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .grid-7 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 58.333333%;
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%;
+            }
+
+            .grid-8 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+
+            .grid-9 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+
+            .grid-10 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 83.333333%;
+                flex: 0 0 83.333333%;
+                max-width: 83.333333%;
+            }
+
+            .grid-11 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 91.666667%;
+                flex: 0 0 91.666667%;
+                max-width: 91.666667%;
+            }
+
+            .grid-12 {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /*Akhir Grid*/
+        /*Component*/
+        .btn-blue {
+            color: #fff;
+            background: #8BACD4;
+            font-size: 16px;
+            padding: 8px 26px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn-outline-blue {
+            color: #8BACD4;
+            background: transparent;
+            font-size: 16px;
+            padding: 8px 17px;
+            text-decoration: none;
+            border: 1px solid #8BACD4;
+            border-radius: 6px;
+        }
+
+        .btn-red {
+            color: #fff;
+            background: #FF8080;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 17px 51px 16px 51px;
+            border-radius: 4px
+        }
+
+        .btn-outline-red {
+            color: #FF8080;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 17px 35px 16px 35px;
+            border: 1px solid #FF8080;
+            border-radius: 4px
+        }
+
+        .btn-sm {
+            padding: 12px 20px 11px 20px;
+        }
+
+        .section-title {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: normal;
+            color: #33333F;
+            text-transform: uppercase;
+        }
+
+        .color {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 20px;
+            box-sizing: content-box;
+            transition: all .2s;
+        }
+
+        .color:hover {
+            cursor: pointer;
+        }
+
+        .color:last-child {
+            margin-right: 0;
+        }
+
+        .green {
+            background-color: #3090A0;
+        }
+
+        .black {
+            background-color: #2A2F30;
+        }
+
+        .grey {
+            background-color: #A1A1A1;
+        }
+
+        .color-active {
+            border: 7px solid #CFE2E6;
+        }
+
+        /*Akhir Component*/
+    </style>
+</head>
+
+<body>
+    <div class="wadah-kotak">
+        <header>
+            <div class="wadah">
+                <div class="baris header-top">
+                    <div class="grid-3">
+                        <a href="index.html">
+                            <img src="assets/img/furnature.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grid-5">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search product or shop" id="search-box">
+                            <div class="search-img">
+                                <img src="assets/img/search-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="search-result-box">
+                            <h1>suggestion</h1>
+                            <ul>
+                                <li><a href="#">Chair <span>All Category</span></a></li>
+                                <li><a href="#">Chair - <span>bed</span></a></li>
+                                <li><a href="#">Chair - <span>3 seat</span></a></li>
+                                <li><a href="#">Chair - <span>4 seat</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid-4 navbar-right">
+                        <div class="chart-img">
+                            <img src="assets/img/cart.png" alt="">
+                        </div>
+                        <div class="vertical-line">
+                            <img src="assets/img/line.png" alt="">
+                        </div>
+                        <div class="btn-group">
+                            <a href="#" class="btn-blue">Login</a>
+                            <a href="#" class="btn-outline-blue">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <header>
+            <div class="wadah">
+                <div class="baris header-bottom">
+                    <div class="grid-12">
+                        <div class="navbar-left">
+                            <ul>
+                                <li><a href="product.html">Product</a></li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)">Category</a>
+                                    <div class="dropdown-content">
+                                        <a href="category-chair.html">Chair</a>
+                                        <a href="category-cupboard.html">Cupboard</a>
+                                        <a href="category-lamp.html">Lamp</a>
+                                        <a href="category-table.html">Table</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)">Rooms</a>
+                                    <div class="dropdown-content">
+                                        <a href="bathroom.html">Bathroom</a>
+                                        <a href="bedroom.html">Bedroom</a>
+                                        <a href="dining-room.html">Dining room</a>
+                                        <a href="living-room.html">Living room</a>
+                                    </div>
+                                </li>
+                                <li><a href="inspiration.html">Inspiration</a></li>
+                                <li><a href="promo.html">Promo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="wadah">
+                <div class="baris">
+                    <div class="grid-12 section-head">
+                        <h1 class="section-title">dining room</h1>
+                    </div>
+                    <div class="grid-12 section-head-underline">
+                        <img src="assets/img/underline.png" alt="" class="underline">
+                    </div>
+                </div>
+                <div class="baris">
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom1.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom2.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom3.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="baris">
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom4.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom5.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div>
+                            <a href="#">
+                                <img src="assets/img/bedroom6.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="subscribe">
+            <div class="wadah">
+                <div class="baris a-i-c">
+                    <div class="grid-6">
+                        <h1 class="subscribe">Subscribe Our Newsletter</h1>
+                        <p class="subscribe">
+                            Subscribe to get discount 10%
+                            on your first purchase
+                        </p>
+                    </div>
+                    <div class="grid-6">
+                        <div class="email-group">
+                            <input type="text" placeholder="Your email">
+                            <input type="button" value="Subscribe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="wadah">
+                <div class="baris">
+                    <div class="grid-4">
+                        <div class="list">
+                            <ul>
+                                <li class="list-title">Navigate</li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="product.html">Product</a></li>
+                                <li><a href="category-chair.html">Category</a></li>
+                                <li><a href="bedroom.html">Room</a></li>
+                            </ul>
+                            <ul>
+                                <li class="list-title">Categories</li>
+                                <li><a href="category-chair.html">Chair</a></li>
+                                <li><a href="category-cupboard.html">Cupboard</a></li>
+                                <li><a href="category-lamp.html">Lamp</a></li>
+                                <li><a href="category-table.html">Table</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div class="list">
+                            <ul>
+                                <li class="list-title">Room</li>
+                                <li><a href="living-room.html">Living room</a></li>
+                                <li><a href="bedroom.html">Bedroom</a></li>
+                                <li><a href="bathroom.html">Bathroom</a></li>
+                                <li><a href="dining-room.html">Dining room</a></li>
+                            </ul>
+                            <ul>
+                                <li class="list-title">Additional</li>
+                                <li><a href="inspiration.html">Inspiration</a></li>
+                                <li><a href="promo.html">Promo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid-4">
+                        <div class="list">
+                            <ul class="no-margin">
+                                <li class="list-title">Contact</li>
+                                <li>
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <th>
+                                                <img src="assets/img/icon1.png" alt="">
+                                            </th>
+                                            <th>
+                                                <p>Furnature,</p><br>
+                                                <p>Jl. DI Pandjaitan no 128</p><br>
+                                                <p>Purwokerto</p>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/img/icon2.png" alt="">
+                                            </td>
+                                            <td>
+                                                <p>hello@furnature.com</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/img/icon3.png" alt="">
+                                            </td>
+                                            <td>
+                                                <p>+62 521 222 5346</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <section class="copyright">
+            <div class="wadah">
+                <div class="baris">
+                    <div class="grid-8">
+                        <p class="copyright">
+                            Copyright &copy 2019, Furnature Inc. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="grid-4">
+                        <div class="social-icon">
+                            <img src="assets/img/facebook.png" alt="">
+                            <img src="assets/img/twitter.png" alt="">
+                            <img src="assets/img/pinterest.png" alt="">
+                            <img src="assets/img/instagram.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/OwlCarousel/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            loop: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#search-box").focus(function() {
+            $(".search-result-box").toggleClass("showup");
+        });
+    });
+    </script>
+</body>
+
+</html>

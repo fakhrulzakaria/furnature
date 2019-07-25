@@ -1,0 +1,83 @@
+.btn-blue {
+    color: #fff;
+    background: #8BACD4;
+    font-size: 16px;
+    padding: 8px 26px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-outline-blue {
+    color: #8BACD4;
+    background: transparent;
+    font-size: 16px;
+    padding: 8px 17px;
+    text-decoration: none;
+    border: 1px solid #8BACD4;
+    border-radius: 6px;
+}
+
+.btn-red {
+    color: #fff;
+    background: #FF8080;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 17px 51px 16px 51px;
+    border-radius: 4px
+}
+
+.btn-outline-red {
+    color: #FF8080;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 17px 35px 16px 35px;
+    border: 1px solid #FF8080;
+    border-radius: 4px
+}
+
+.btn-sm {
+    padding: 12px 20px 11px 20px;
+}
+
+.section-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    color: #33333F;
+    text-transform: uppercase;
+}
+
+.color {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-sizing: content-box;
+    transition: all .2s;
+}
+
+.color:hover {
+    cursor: pointer;
+}
+
+.color:last-child {
+    margin-right: 0;
+}
+
+.green {
+    background-color: #3090A0;
+}
+
+.black {
+    background-color: #2A2F30;
+}
+
+.grey {
+    background-color: #A1A1A1;
+}
+
+.color-active {
+    border: 7px solid #CFE2E6;
+}
